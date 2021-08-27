@@ -1,3 +1,13 @@
+void copy(int column, int order, double arr[order][order]);
+double det(int order, double arr[order][order]);
+
+/*
+	It creates a "copy" of the given matrix.
+	This "copy" is the own matrix without the
+	given column and the first line
+	The Matrix given becomes the copied matrix.
+	(LaPlace in first line)
+*/
 void copy(int column, int order, double arr[order][order])
 {
 	int i, k;
@@ -36,11 +46,19 @@ void copy(int column, int order, double arr[order][order])
 
 }
 
+
+/*
+	Finaly, it calculates the determinant, by a recussive function
+	which uses the copied matrix from the function above
+*/
 double det(int order, double arr[order][order])
 {
 
 	double value = 0;
 
+	/*
+		If the matrix's order is one, its det. is the only number.
+	*/
 	if(order == 1)
 	{
 		return arr[0][0];
